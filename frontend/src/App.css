@@ -1,0 +1,185 @@
+/* --- Global Reset & Variables --- */
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --border: #334155;
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+header h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, #a78bfa, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+/* --- Filter Buttons --- */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  background: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover {
+  border-color: var(--accent);
+}
+
+.filters button.active-filter {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* --- Project Bento Grid --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+/* --- Project Card --- */
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent);
+}
+
+/* Preview Box (Images/PDFs) */
+.preview-box {
+  width: 100%;
+  height: 220px;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pdf-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.file-placeholder {
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.icon { font-size: 3rem; }
+
+.download-btn {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 6px 15px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+/* Card Content */
+.card-content {
+  padding: 20px;
+}
+
+.category-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.card-content h3 {
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+
+.card-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- Upload Form --- */
+.upload-form {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  max-width: 500px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upload-form input, .upload-form select, .upload-form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: white;
+}
+
+.upload-form button {
+  background: var(--accent);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.upload-form button:hover {
+  background: var(--accent-hover);
+}
